@@ -6,7 +6,8 @@ ${BROWSER}    chrome
 ${URL}    http://www.amazon.com.br
 ${MENU_ELETRONICOS}    //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=16209062011&ref_=nav_cs_electronics'][contains(.,'Eletrônicos')]
 ${HEADER_ELETRONICOS}    //h1[contains(.,'Eletrônicos e Tecnologia')]
-${PRODUTO}    
+${PRODUTO}
+${CARRINHO}
 
 
 *** Keywords ***
@@ -43,6 +44,22 @@ Clicar no botão de pesquisa
 
 Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
     Wait Until Element Is Visible    locator=(//span[contains(.,'${PRODUTO}')])[3]
+
+Adicionar o produto "${PRODUTO}" no carrinho
+    Click Image    locator=//img[contains(@alt,'${PRODUTO}')]
+    Wait Until Element Is Visible    locator=//input[contains(@id,'add-to-cart-button')]
+    Click Button    locator=//input[contains(@id,'add-to-cart-button')]
+
+Verificar se o produto "${PRODUTO}" foi adicionado com sucesso
+    Wait Until Element Is Visible    locator=sw-atc-buy-box
+    Click Element    locator=//a[contains(@data-csa-c-type,'button')]
+    Wait Until Element Is Visible    locator=//span[@class='a-truncate-cut'][contains(.,'${PRODUTO}')]
+
+Remover o produto "${PRODUTO}" do carrinho
+    Click Element    locator=//input[contains(@value,'Excluir')]
+
+Verificar se o carrinho fica vazio
+    Wait Until Element Is Visible    locator=//h1[@class='a-spacing-mini a-spacing-top-base'][contains(.,'Seu carrinho de compras da Amazon está vazio.')]
 
 #GHERKIN STEPS
 Dado que estou na home page da Amazon.com.br
