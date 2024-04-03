@@ -1,74 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20240331 23:26:15.253" rpa="false" schemaversion="4">
-<suite id="s1" name="Pratica Com Dicionario Meses Ano" source="c:\Users\babih\CursoUdemy\RobotFramework\VariaveisEscoposArgumentos\pratica_com_dicionario_meses_ano.robot">
-<test id="s1-t1" name="Caso de teste de exercicio com dicionario" line="9">
-<kw name="Teste com dicionario">
-<kw name="Log To Console" library="BuiltIn">
-<arg>jan: ${MESES.jan}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.284" endtime="20240331 23:26:15.284"/>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20240402 23:18:49.114" rpa="false" schemaversion="4">
+<suite id="s1" name="Pratica Com Arg Retornos" source="C:\Users\babih\CursoUdemy\RobotFramework\VariaveisEscoposArgumentos\pratica_com_arg_retornos.robot">
+<test id="s1-t1" name="Imprimindo um e-mail customizado e aleatório" line="8">
+<kw name="Criar e-mail customizado e aleatório">
+<var>${EMAIL_CRIADO}</var>
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.sobrenome}</arg>
+<kw name="Generate Random String" library="String">
+<var>${ALEATORIA}</var>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20240402 23:18:49.142" level="INFO">${ALEATORIA} = KNxJsC2q</msg>
+<status status="PASS" starttime="20240402 23:18:49.142" endtime="20240402 23:18:49.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${EMAIL_FINAL}</var>
+<arg>${NOME}${SOBRENOME}${ALEATORIA}@testerobot.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240402 23:18:49.143" level="INFO">${EMAIL_FINAL} = FulanodeTalKNxJsC2q@testerobot.com</msg>
+<status status="PASS" starttime="20240402 23:18:49.143" endtime="20240402 23:18:49.143"/>
+</kw>
+<msg timestamp="20240402 23:18:49.143" level="INFO">${EMAIL_CRIADO} = FulanodeTalKNxJsC2q@testerobot.com</msg>
+<status status="PASS" starttime="20240402 23:18:49.141" endtime="20240402 23:18:49.143"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>fev: ${MESES.fev}</arg>
+<arg>${EMAIL_CRIADO}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.285" endtime="20240331 23:26:15.286"/>
+<status status="PASS" starttime="20240402 23:18:49.143" endtime="20240402 23:18:49.144"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>mar: ${MESES.mar}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.286" endtime="20240331 23:26:15.287"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>abr: ${MESES.abr}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.287" endtime="20240331 23:26:15.289"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>mai: ${MESES.mai}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.290" endtime="20240331 23:26:15.291"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>jun: ${MESES.jun}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.292" endtime="20240331 23:26:15.293"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>jul: ${MESES.jul}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.293" endtime="20240331 23:26:15.294"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>ago: ${MESES.ago}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.295" endtime="20240331 23:26:15.296"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>set: ${MESES.set}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.297" endtime="20240331 23:26:15.298"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>out: ${MESES.out}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.298" endtime="20240331 23:26:15.299"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>nov: ${MESES.nov}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.299" endtime="20240331 23:26:15.301"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>dez: ${MESES.dez}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240331 23:26:15.302" endtime="20240331 23:26:15.303"/>
-</kw>
-<status status="PASS" starttime="20240331 23:26:15.283" endtime="20240331 23:26:15.303"/>
-</kw>
-<status status="PASS" starttime="20240331 23:26:15.282" endtime="20240331 23:26:15.304"/>
+<status status="PASS" starttime="20240402 23:18:49.141" endtime="20240402 23:18:49.144"/>
 </test>
-<doc>exercicios de pratica com DICIONARIO</doc>
-<status status="PASS" starttime="20240331 23:26:15.258" endtime="20240331 23:26:15.305"/>
+<status status="PASS" starttime="20240402 23:18:49.116" endtime="20240402 23:18:49.145"/>
 </suite>
 <statistics>
 <total>
@@ -77,7 +38,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Pratica Com Dicionario Meses Ano">Pratica Com Dicionario Meses Ano</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Pratica Com Arg Retornos">Pratica Com Arg Retornos</stat>
 </suite>
 </statistics>
 <errors>
